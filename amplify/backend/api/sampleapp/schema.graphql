@@ -1,0 +1,16 @@
+type Todo @model @auth(rules: [{allow: public}]){
+    id: ID! @primaryKey
+    name: String! @index(name: "SortByCreatedAt", sortKeyFields:["owner"], queryField: "listTodosSortedByName")
+    owner: String
+    updatedAt: AWSDateTime 
+    createdAt: AWSDateTime 
+}
+
+type statusResult {
+  statusCode: Int
+  returnMessage: String
+}
+
+type Query {
+  helloWorld(msg: String):statusResult @function(name: "sampleapp52645ff4-${env}")
+}

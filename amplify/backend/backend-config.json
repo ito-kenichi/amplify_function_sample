@@ -1,0 +1,45 @@
+{
+  "api": {
+    "sampleapp": {
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            },
+            "authenticationType": "API_KEY"
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    }
+  },
+  "function": {
+    "sampleapp52645ff4": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_sampleapp52645ff4_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sampleapp52645ff4"
+        }
+      ]
+    },
+    "AMPLIFY_function_sampleapp52645ff4_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sampleapp52645ff4"
+        }
+      ]
+    }
+  }
+}
